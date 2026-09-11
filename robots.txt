@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cssbox.globalcorehub.com/sitemap.xml
