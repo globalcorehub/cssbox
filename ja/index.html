@@ -33,8 +33,26 @@
   <meta name="twitter:title" content="CssBox Studio - Webエンジニア向け 高速オンライン開発ツール集">
   <meta name="twitter:description" content="日々の開発業務を加速するモダンなオンラインツール集。サーバー送信なし、完全無料・安全・快適に利用可能です。">
 
-  <!-- Theme Specific Typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Multi-Theme Typography Imports (JetBrains Mono, Plus Jakarta Sans, Space Grotesk) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Immediate Zero-FOUC Theme Initializer -->
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('agy_theme') || 'editorial_paper';
+        document.documentElement.setAttribute('data-theme', t);
+        if (t === 'swiss_minimal') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <!-- Tailwind CSS Core -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -44,26 +62,104 @@
       theme: {
         extend: {
           colors: {
-            brand: '#10b981'
+            brand: '#b45309'
           }
         }
       }
     }
   </script>
 
-  <!-- Theme Specific Styles -->
+  <!-- Theme Specific & Dynamic Multi-Theme Styles -->
   <style>
-    body { font-family: 'JetBrains Mono', monospace; }
+    body { font-family: 'Inter', sans-serif; }
     
-        pre, code, kbd { font-family: 'JetBrains Mono', monospace; }
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #0c0e14; }
-        ::-webkit-scrollbar-thumb { background: #1e2333; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #10b981; }
-        .terminal-dot-red { background-color: #ff5f56; }
-        .terminal-dot-yellow { background-color: #ffbd2e; }
-        .terminal-dot-green { background-color: #27c93f; }
+        h1, h2, h3, .serif-heading { font-family: 'Newsreader', Georgia, serif; }
+        .editorial-rule { border-top: 2px solid #27272a; }
         
+
+    /* Dynamic Multi-Theme Overrides */
+    html[data-theme="terminal_dev"] body {
+      font-family: 'JetBrains Mono', monospace !important;
+      background-color: #0c0e14 !important;
+      color: #e2e8f0 !important;
+    }
+    html[data-theme="terminal_dev"] .bg-\[\#0c0e14\] { background-color: #0c0e14 !important; }
+    html[data-theme="terminal_dev"] header,
+    html[data-theme="terminal_dev"] .bg-\[\#11141d\] { background-color: #11141d !important; }
+    html[data-theme="terminal_dev"] .border-\[\#1e2333\] { border-color: #1e2333 !important; }
+    html[data-theme="terminal_dev"] .text-\[\#10b981\] { color: #10b981 !important; }
+    html[data-theme="terminal_dev"] .bg-\[\#10b981\] { background-color: #10b981 !important; color: #000000 !important; }
+    html[data-theme="terminal_dev"] .bg-\[\#10b981\]\/10 { background-color: rgba(16, 185, 129, 0.12) !important; }
+    html[data-theme="terminal_dev"] .border-\[\#10b981\]\/30 { border-color: rgba(16, 185, 129, 0.3) !important; }
+    html[data-theme="terminal_dev"] [style*="color: #10b981"],
+    html[data-theme="terminal_dev"] [style*="color:#10b981"] { color: #10b981 !important; }
+
+    html[data-theme="cyber_electric"] body {
+      font-family: 'Space Grotesk', sans-serif !important;
+      background-color: #090d16 !important;
+      color: #cbd5e1 !important;
+    }
+    html[data-theme="cyber_electric"] .bg-\[\#0c0e14\],
+    html[data-theme="cyber_electric"] .bg-\[\#fafaf9\] { background-color: #090d16 !important; }
+    html[data-theme="cyber_electric"] header,
+    html[data-theme="cyber_electric"] .bg-\[\#11141d\],
+    html[data-theme="cyber_electric"] .bg-white { background-color: #0d1322 !important; }
+    html[data-theme="cyber_electric"] .border-\[\#1e2333\],
+    html[data-theme="cyber_electric"] .border-\[\#e2e8f0\] { border-color: #1e293b !important; }
+    html[data-theme="cyber_electric"] .text-\[\#10b981\] { color: #38bdf8 !important; }
+    html[data-theme="cyber_electric"] .bg-\[\#10b981\] { background-color: #38bdf8 !important; color: #090d16 !important; }
+    html[data-theme="cyber_electric"] .bg-\[\#10b981\]\/10 { background-color: rgba(56, 189, 248, 0.12) !important; }
+    html[data-theme="cyber_electric"] .border-\[\#10b981\]\/30 { border-color: rgba(56, 189, 248, 0.35) !important; }
+    html[data-theme="cyber_electric"] [style*="color: #10b981"],
+    html[data-theme="cyber_electric"] [style*="color:#10b981"] { color: #38bdf8 !important; }
+
+    html[data-theme="midnight_purple"] body {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      background-color: #0b0716 !important;
+      color: #e9d5ff !important;
+    }
+    html[data-theme="midnight_purple"] .bg-\[\#0c0e14\],
+    html[data-theme="midnight_purple"] .bg-\[\#fafaf9\] { background-color: #0b0716 !important; }
+    html[data-theme="midnight_purple"] header,
+    html[data-theme="midnight_purple"] .bg-\[\#11141d\],
+    html[data-theme="midnight_purple"] .bg-white { background-color: #160e2b !important; }
+    html[data-theme="midnight_purple"] .border-\[\#1e2333\],
+    html[data-theme="midnight_purple"] .border-\[\#e2e8f0\] { border-color: #3b1d68 !important; }
+    html[data-theme="midnight_purple"] .text-\[\#10b981\] { color: #c084fc !important; }
+    html[data-theme="midnight_purple"] .bg-\[\#10b981\] { background-color: #c084fc !important; color: #0b0716 !important; }
+    html[data-theme="midnight_purple"] .bg-\[\#10b981\]\/10 { background-color: rgba(192, 132, 252, 0.15) !important; }
+    html[data-theme="midnight_purple"] .border-\[\#10b981\]\/30 { border-color: rgba(192, 132, 252, 0.35) !important; }
+    html[data-theme="midnight_purple"] [style*="color: #10b981"],
+    html[data-theme="midnight_purple"] [style*="color:#10b981"] { color: #c084fc !important; }
+
+    html[data-theme="swiss_minimal"] body {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      background-color: #f8fafc !important;
+      color: #0f172a !important;
+    }
+    html[data-theme="swiss_minimal"] .bg-\[\#0c0e14\],
+    html[data-theme="swiss_minimal"] .bg-\[\#fafaf9\] { background-color: #f8fafc !important; }
+    html[data-theme="swiss_minimal"] header,
+    html[data-theme="swiss_minimal"] .bg-\[\#11141d\],
+    html[data-theme="swiss_minimal"] .bg-white { background-color: #ffffff !important; }
+    html[data-theme="swiss_minimal"] .border-\[\#1e2333\],
+    html[data-theme="swiss_minimal"] .border-\[\#3b1d68\] { border-color: #e2e8f0 !important; }
+    html[data-theme="swiss_minimal"] .text-\[\#e2e8f0\],
+    html[data-theme="swiss_minimal"] .text-\[\#cbd5e1\],
+    html[data-theme="swiss_minimal"] .text-\[\#e9d5ff\] { color: #0f172a !important; }
+    html[data-theme="swiss_minimal"] .text-\[\#10b981\] { color: #2563eb !important; }
+    html[data-theme="swiss_minimal"] .bg-\[\#10b981\] { background-color: #2563eb !important; color: #ffffff !important; }
+    html[data-theme="swiss_minimal"] .bg-\[\#10b981\]\/10 { background-color: rgba(37, 99, 235, 0.08) !important; }
+    html[data-theme="swiss_minimal"] .border-\[\#10b981\]\/30 { border-color: rgba(37, 99, 235, 0.2) !important; }
+    html[data-theme="swiss_minimal"] [style*="color: #10b981"],
+    html[data-theme="swiss_minimal"] [style*="color:#10b981"] { color: #2563eb !important; }
+    html[data-theme="swiss_minimal"] #header-terminal-dots { display: none !important; }
+    html[data-theme="swiss_minimal"] input,
+    html[data-theme="swiss_minimal"] textarea {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+      border-color: #cbd5e1 !important;
+    }
   </style>
 
   <!-- Structured Data JSON-LD (WebApplication) -->
@@ -88,37 +184,40 @@
   <!-- Tech Stack Scripts (Alpine.js / Canvas loop / Terminal runtime) -->
   
         <script>
-        // Terminal Keyboard Shortcut (Ctrl+K or /) & Toast Notification Runtime
+        // Reading Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const bar = document.getElementById('reading-bar');
+            if (bar) bar.style.width = scrolled + '%';
+        });
         window.showToast = function(msg) {
             const toast = document.createElement('div');
-            toast.className = 'fixed bottom-6 right-6 z-50 bg-[#10b981] text-black font-mono text-xs px-4 py-2.5 rounded-lg shadow-2xl font-bold flex items-center space-x-2 animate-bounce';
-            toast.innerHTML = '<span>></span><span>' + msg + '</span>';
+            toast.className = 'fixed bottom-6 right-6 z-50 bg-[#27272a] dark:bg-[#f4f4f5] text-[#f4f4f5] dark:text-[#27272a] text-xs px-4 py-2.5 rounded shadow-lg font-serif italic';
+            toast.textContent = msg;
             document.body.appendChild(toast);
             setTimeout(() => toast.remove(), 2500);
         };
         </script>
         
 </head>
-<body class="bg-[#0c0e14] text-[#e2e8f0] min-h-screen flex flex-col transition-colors duration-200">
+<body class="bg-[#fcfbf9] dark:bg-[#18181b] text-[#27272a] dark:text-[#f4f4f5] min-h-screen flex flex-col transition-colors duration-200">
 
+  
+  <div id="reading-bar" class="fixed top-0 left-0 h-1 bg-[#b45309] z-[100] transition-all duration-100" style="width: 0%"></div>
   
 
   <!-- Header Navigation (Responsive Desktop & Mobile) -->
-  <header class="sticky top-0 z-50 bg-[#11141d]/90 backdrop-blur-md border-b border-[#1e2333]">
+  <header class="sticky top-0 z-50 bg-[#fcfbf9]/90 dark:bg-[#18181b]/90 backdrop-blur-md border-b border-[#e4e4e7] dark:border-[#27272a]">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
       <!-- Brand & Terminal Indicator -->
       <div class="flex items-center space-x-2 sm:space-x-3">
         
-        <div class="hidden sm:flex items-center space-x-1.5 mr-1 sm:mr-2">
-          <span class="w-3 h-3 rounded-full terminal-dot-red inline-block"></span>
-          <span class="w-3 h-3 rounded-full terminal-dot-yellow inline-block"></span>
-          <span class="w-3 h-3 rounded-full terminal-dot-green inline-block"></span>
-        </div>
-        
 
         <a href="/ja/" class="flex items-center space-x-2.5 sm:space-x-3 group">
-          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center font-black text-base sm:text-lg bg-[#10b981] hover:bg-[#059669] text-black font-bold tracking-tight shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center font-black text-base sm:text-lg bg-[#b45309] hover:bg-[#92400e] text-white font-medium rounded-lg">
             C
           </div>
           <span class="text-base sm:text-lg font-extrabold tracking-tight truncate max-w-[150px] sm:max-w-none">
@@ -141,56 +240,56 @@
           </button>
 
           <!-- Dropdown Panel (Categorized & Compact) -->
-          <div id="tools-dropdown-panel" class="hidden absolute left-0 mt-1.5 w-72 sm:w-80 rounded-2xl bg-[#11141d] border border-[#1e2333] hover:border-[#10b981]/50 shadow-[0_4px_20px_rgba(0,0,0,0.5)] shadow-2xl z-50 p-2 font-mono text-xs backdrop-blur-xl">
-            <div class="flex items-center justify-between px-2.5 py-1 text-[10px] uppercase tracking-wider opacity-50 border-b border-[#1e2333] hover:border-[#10b981]/50/50 mb-1">
+          <div id="tools-dropdown-panel" class="hidden absolute left-0 mt-1.5 w-72 sm:w-80 rounded-2xl bg-white dark:bg-[#202024] border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] shadow-2xl z-50 p-2 font-mono text-xs backdrop-blur-xl">
+            <div class="flex items-center justify-between px-2.5 py-1 text-[10px] uppercase tracking-wider opacity-50 border-b border-white/10 mb-1">
               <span>開発者向け便利ツール索引</span>
               <span>5 全ツール一覧</span>
             </div>
             <div class="max-h-72 overflow-y-auto space-y-0.5">
               
-              <a href="/ja/css-box-shadow-generator" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+              <a href="/ja/css-box-shadow-generator" title="CSS Box Shadow (ボックスシャドウ) 視覚的ジェネレーター" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
                 <div class="truncate mr-2">
-                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">CSS Box Shadow (ボックスシャドウ) 視覚的ジェネレーター</div>
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">CSS 影生成</div>
                   <div class="text-[10px] opacity-50 truncate">ぼかし半径、広がり、X/Y座標、内側シャドウ(Inset)をスライダーで直感調整。リアルタイムプレビューからCSSとTailwindを即座にコピー。</div>
                 </div>
                 <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
               </a>
               
-              <a href="/ja/css-gradient-background-generator" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+              <a href="/ja/css-gradient-background-generator" title="CSS グラデーション背景生成ツール (線形・放射状・円錐)" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
                 <div class="truncate mr-2">
-                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">CSS グラデーション背景生成ツール (線形・放射状・円錐)</div>
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">グラデーション</div>
                   <div class="text-[10px] opacity-50 truncate">線形(Linear)、放射状(Radial)、円錐状(Conic)のCSSグラデーションを直感操作で作成。角度調整、マルチカラー分岐、即座CSSコピー。</div>
                 </div>
                 <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
               </a>
               
-              <a href="/ja/wcag-color-contrast-checker" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+              <a href="/ja/wcag-color-contrast-checker" title="WCAG 2.1 色コントラスト比チェッカー (AA・AAA アクセシビリティ診断)" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
                 <div class="truncate mr-2">
-                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">WCAG 2.1 色コントラスト比チェッカー (AA・AAA アクセシビリティ診断)</div>
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">コントラスト比</div>
                   <div class="text-[10px] opacity-50 truncate">背景色と文字色のコントラスト比をミリ秒算出。Webアクセシビリティ国際規格WCAG 2.1のAAおよびAAA適合判定を瞬時に表示。</div>
                 </div>
                 <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
               </a>
               
-              <a href="/ja/pixel-to-rem-em-converter" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+              <a href="/ja/pixel-to-rem-em-converter" title="PX (ピクセル) ⇄ REM / EM 相互換算ツール (レスポンシブ単位)" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
                 <div class="truncate mr-2">
-                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">PX (ピクセル) ⇄ REM / EM 相互換算ツール (レスポンシブ単位)</div>
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">PX REM 換算</div>
                   <div class="text-[10px] opacity-50 truncate">基準フォントサイズ(16px等)をベースに、PXとREM、EMを双方向でリアルタイム換算。メディアクエリ用のCSSスニペットも自動生成。</div>
                 </div>
                 <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
               </a>
               
-              <a href="/ja/svg-to-css-data-uri-converter" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
+              <a href="/ja/svg-to-css-data-uri-converter" title="SVG コード ⇄ CSS Data URI & Base64 背景画像変換ツール" class="flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-white/10 transition group/item">
                 <div class="truncate mr-2">
-                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">SVG コード ⇄ CSS Data URI & Base64 背景画像変換ツール</div>
+                  <div class="font-bold text-xs group-hover/item:text-brand transition truncate">SVG Data URI</div>
                   <div class="text-[10px] opacity-50 truncate">SVGソースコードやファイルをブラウザ内で最適化し、CSS background-image用のData URIやBase64形式へ瞬時にエンコード出力。</div>
                 </div>
                 <span class="text-[10px] opacity-30 font-mono group-hover/item:opacity-80 transition">&rarr;</span>
               </a>
               
             </div>
-            <div class="mt-1.5 pt-1.5 border-t border-[#1e2333] hover:border-[#10b981]/50/50 px-2 flex items-center justify-between">
-              <a href="/ja/#tools-grid" class="text-[11px] font-bold hover:underline flex items-center space-x-1" style="color: #10b981">
+            <div class="mt-1.5 pt-1.5 border-t border-white/10 px-2 flex items-center justify-between">
+              <a href="/ja/#tools-grid" class="text-[11px] font-bold hover:underline flex items-center space-x-1" style="color: #b45309">
                 <span>すべてのツールを見る</span>
                 <span>&rarr;</span>
               </a>
@@ -201,31 +300,75 @@
 
         <!-- At most 2 quick shortcut links for high-frequency tools on large screens -->
         
-        <a href="/ja/css-box-shadow-generator" class="hidden xl:inline-block px-2.5 py-1.5 rounded-lg hover:bg-white/5 transition opacity-70 hover:opacity-100 whitespace-nowrap">CSS 影生成</a>
+        <a href="/ja/css-box-shadow-generator" title="CSS Box Shadow (ボックスシャドウ) 視覚的ジェネレーター" class="hidden xl:inline-block px-2.5 py-1.5 rounded-lg hover:bg-white/5 transition opacity-70 hover:opacity-100 whitespace-nowrap">CSS 影生成</a>
         
-        <a href="/ja/css-gradient-background-generator" class="hidden xl:inline-block px-2.5 py-1.5 rounded-lg hover:bg-white/5 transition opacity-70 hover:opacity-100 whitespace-nowrap">グラデーション</a>
+        <a href="/ja/css-gradient-background-generator" title="CSS グラデーション背景生成ツール (線形・放射状・円錐)" class="hidden xl:inline-block px-2.5 py-1.5 rounded-lg hover:bg-white/5 transition opacity-70 hover:opacity-100 whitespace-nowrap">グラデーション</a>
         
       </nav>
 
       <!-- Action Items & Language Selector & Quick Search & Mobile Hamburger -->
       <div class="flex items-center space-x-2 sm:space-x-3">
         <!-- Quick Search Trigger in Header -->
-        <button id="global-search-btn" type="button" class="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg border border-[#1e2333] hover:border-[#10b981]/50 bg-black/15 hover:bg-black/30 text-xs font-mono opacity-80 hover:opacity-100 transition" title="ツール名・用途・拡張子で瞬時に絞り込み... (/ キーで検索)">
+        <button id="global-search-btn" type="button" class="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/15 hover:bg-black/30 text-xs font-mono opacity-80 hover:opacity-100 transition" title="ツール名・用途・拡張子で瞬時に絞り込み... (/ キーで検索)">
           <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
           <span class="hidden sm:inline opacity-70">検索</span>
-          <kbd class="hidden sm:inline text-[9px] px-1 py-0.5 rounded border border-[#1e2333] hover:border-[#10b981]/50 opacity-50 bg-black/20 font-mono">Ctrl+K</kbd>
+          <kbd class="hidden sm:inline text-[9px] px-1 py-0.5 rounded border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] opacity-50 bg-black/20 font-mono">Ctrl+K</kbd>
         </button>
+
+        <!-- Interactive Multi-Theme Selector Dropdown -->
+        <div class="relative inline-block text-left" id="theme-selector-container">
+          <button id="theme-toggle-btn" type="button" class="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] hover:opacity-90 transition bg-black/20" title="テーマスタイル">
+            <span id="theme-current-icon" class="text-sm leading-none">🖤</span>
+            <span id="theme-current-name" class="hidden xl:inline text-xs font-medium">黒 (ターミナル)</span>
+            <svg class="w-3 h-3 opacity-60 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="theme-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-xl bg-white dark:bg-[#202024] border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] z-50 py-1.5 font-mono text-xs shadow-2xl backdrop-blur-xl">
+            <div class="px-3 py-1 text-[10px] uppercase tracking-wider opacity-50 border-b border-white/10 mb-1">
+              テーマスタイル
+            </div>
+            <button type="button" onclick="window.switchTheme('terminal_dev', true)" data-theme-opt="terminal_dev" class="w-full flex items-center justify-between px-3 py-2 hover:bg-white/10 transition text-left group">
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-[#10b981] inline-block shadow-[0_0_6px_#10b981]"></span>
+                <span class="font-medium group-hover:text-emerald-400 transition">黒 (ターミナル)</span>
+              </div>
+              <span class="theme-check text-emerald-400 font-bold opacity-0">&check;</span>
+            </button>
+            <button type="button" onclick="window.switchTheme('cyber_electric', true)" data-theme-opt="cyber_electric" class="w-full flex items-center justify-between px-3 py-2 hover:bg-white/10 transition text-left group">
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-[#38bdf8] inline-block shadow-[0_0_6px_#38bdf8]"></span>
+                <span class="font-medium group-hover:text-sky-400 transition">サイバーネオン</span>
+              </div>
+              <span class="theme-check text-sky-400 font-bold opacity-0">&check;</span>
+            </button>
+            <button type="button" onclick="window.switchTheme('midnight_purple', true)" data-theme-opt="midnight_purple" class="w-full flex items-center justify-between px-3 py-2 hover:bg-white/10 transition text-left group">
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-[#c084fc] inline-block shadow-[0_0_6px_#c084fc]"></span>
+                <span class="font-medium group-hover:text-purple-400 transition">ミッドナイトパープル</span>
+              </div>
+              <span class="theme-check text-purple-400 font-bold opacity-0">&check;</span>
+            </button>
+            <button type="button" onclick="window.switchTheme('swiss_minimal', true)" data-theme-opt="swiss_minimal" class="w-full flex items-center justify-between px-3 py-2 hover:bg-white/10 transition text-left group">
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-[#2563eb] inline-block shadow-[0_0_6px_#2563eb]"></span>
+                <span class="font-medium group-hover:text-blue-500 transition">ミニマル (白)</span>
+              </div>
+              <span class="theme-check text-blue-500 font-bold opacity-0">&check;</span>
+            </button>
+          </div>
+        </div>
 
         <!-- 7-Language International Dropdown -->
         <div class="relative inline-block text-left" id="lang-container">
-          <button id="lang-toggle-btn" type="button" class="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-[#1e2333] hover:border-[#10b981]/50 hover:opacity-90 transition bg-black/20">
+          <button id="lang-toggle-btn" type="button" class="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] hover:opacity-90 transition bg-black/20">
             <span>[JA]</span>
             <span class="font-bold">JA</span>
             <span class="text-[9px] opacity-60">&darr;</span>
           </button>
-          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-36 rounded-xl bg-[#11141d] border border-[#1e2333] hover:border-[#10b981]/50 shadow-[0_4px_20px_rgba(0,0,0,0.5)] z-50 py-1.5 font-mono text-xs shadow-2xl">
+          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-36 rounded-xl bg-white dark:bg-[#202024] border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] z-50 py-1.5 font-mono text-xs shadow-2xl">
             
             <a href="/" class="flex items-center justify-between px-3 py-1.5 hover:bg-white/10 transition opacity-75">
               <span>[EN] English</span>
@@ -266,7 +409,7 @@
         </div>
 
         <!-- Mobile Menu Toggle Button (Visible on mobile <768px) -->
-        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg border border-[#1e2333] hover:border-[#10b981]/50 hover:opacity-80 transition flex items-center justify-center bg-black/20" aria-label="Toggle Navigation Menu">
+        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] hover:opacity-80 transition flex items-center justify-center bg-black/20" aria-label="Toggle Navigation Menu">
           <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -278,47 +421,70 @@
     </div>
 
     <!-- Mobile Collapsible Navigation Menu Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-[#1e2333] bg-[#11141d]/90 backdrop-blur-md px-4 pt-3 pb-5 space-y-2 backdrop-blur-lg">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-[#e4e4e7] dark:border-[#27272a] bg-[#fcfbf9]/90 dark:bg-[#18181b]/90 backdrop-blur-md px-4 pt-3 pb-5 space-y-2 backdrop-blur-lg">
       <a href="/ja/" class="block px-3 py-2 rounded-xl text-sm font-semibold hover:bg-white/10 transition">ホーム</a>
 
+      <!-- Mobile Theme Switcher Bar -->
+      <div class="py-2 border-b border-white/10 mb-2">
+        <div class="text-[10px] uppercase font-mono opacity-50 mb-1.5">テーマスタイル</div>
+        <div class="grid grid-cols-4 gap-1.5">
+          <button onclick="window.switchTheme('terminal_dev', true)" class="p-1.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#10b981] mb-1"></span>
+            <span class="truncate max-w-full">黒 (タ</span>
+          </button>
+          <button onclick="window.switchTheme('cyber_electric', true)" class="p-1.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#38bdf8] mb-1"></span>
+            <span class="truncate max-w-full">サイバー</span>
+          </button>
+          <button onclick="window.switchTheme('midnight_purple', true)" class="p-1.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#c084fc] mb-1"></span>
+            <span class="truncate max-w-full">ミッドナ</span>
+          </button>
+          <button onclick="window.switchTheme('swiss_minimal', true)" class="p-1.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#2563eb] mb-1"></span>
+            <span class="truncate max-w-full">ミニマル</span>
+          </button>
+        </div>
+      </div>
+
       <!-- Quick Search Trigger in Mobile Drawer -->
-      <button id="mobile-search-trigger" type="button" class="w-full flex items-center justify-between px-3 py-2 rounded-xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/20 text-xs font-mono opacity-80">
+      <button id="mobile-search-trigger" type="button" class="w-full flex items-center justify-between px-3 py-2 rounded-xl border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/20 text-xs font-mono opacity-80">
         <span class="flex items-center space-x-2">
           <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
           <span>ツール名・用途・拡張子で瞬時に絞り込み... (/ キーで検索)</span>
         </span>
-        <kbd class="text-[10px] px-1.5 py-0.5 rounded border border-[#1e2333] hover:border-[#10b981]/50 opacity-50">/</kbd>
+        <kbd class="text-[10px] px-1.5 py-0.5 rounded border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] opacity-50">/</kbd>
       </button>
 
       <!-- Tools Group in Mobile Drawer -->
-      <div class="pt-2 border-t border-[#1e2333]">
+      <div class="pt-2 border-t border-[#e4e4e7] dark:border-[#27272a]">
         <div class="text-[10px] font-mono uppercase tracking-wider opacity-50 px-3 mb-1">全ツール一覧 (5)</div>
         <div class="space-y-1 max-h-60 overflow-y-auto">
           
-          <a href="/ja/css-box-shadow-generator" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
-            <span class="truncate">CSS Box Shadow (ボックスシャドウ) 視覚的ジェネレーター</span>
+          <a href="/ja/css-box-shadow-generator" title="CSS Box Shadow (ボックスシャドウ) 視覚的ジェネレーター" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">CSS 影生成</span>
             <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
           </a>
           
-          <a href="/ja/css-gradient-background-generator" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
-            <span class="truncate">CSS グラデーション背景生成ツール (線形・放射状・円錐)</span>
+          <a href="/ja/css-gradient-background-generator" title="CSS グラデーション背景生成ツール (線形・放射状・円錐)" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">グラデーション</span>
             <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
           </a>
           
-          <a href="/ja/wcag-color-contrast-checker" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
-            <span class="truncate">WCAG 2.1 色コントラスト比チェッカー (AA・AAA アクセシビリティ診断)</span>
+          <a href="/ja/wcag-color-contrast-checker" title="WCAG 2.1 色コントラスト比チェッカー (AA・AAA アクセシビリティ診断)" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">コントラスト比</span>
             <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
           </a>
           
-          <a href="/ja/pixel-to-rem-em-converter" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
-            <span class="truncate">PX (ピクセル) ⇄ REM / EM 相互換算ツール (レスポンシブ単位)</span>
+          <a href="/ja/pixel-to-rem-em-converter" title="PX (ピクセル) ⇄ REM / EM 相互換算ツール (レスポンシブ単位)" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">PX REM 換算</span>
             <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
           </a>
           
-          <a href="/ja/svg-to-css-data-uri-converter" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
-            <span class="truncate">SVG コード ⇄ CSS Data URI & Base64 背景画像変換ツール</span>
+          <a href="/ja/svg-to-css-data-uri-converter" title="SVG コード ⇄ CSS Data URI & Base64 背景画像変換ツール" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-white/10 transition opacity-80 hover:opacity-100 flex items-center justify-between">
+            <span class="truncate">SVG Data URI</span>
             <span class="text-xs opacity-30 font-mono ml-2">&rarr;</span>
           </a>
           
@@ -335,7 +501,7 @@
         <div class="max-w-7xl mx-auto">
           <!-- Hero Banner (Mobile & Desktop Responsive) -->
           <div class="text-center py-8 sm:py-12 md:py-16">
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs font-mono mb-4 sm:mb-5">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs font-mono mb-4 sm:mb-5">
               <span>Webエンジニア向け 高速オンライン開発ツール集</span>
             </div>
             <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight mb-3 sm:mb-4">
@@ -354,9 +520,9 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
               </div>
-              <input type="text" id="tool-search" placeholder="ツール名・用途・拡張子で瞬時に絞り込み... (/ キーで検索)" class="w-full pl-11 pr-20 py-3 sm:py-3.5 rounded-2xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/10 dark:bg-black/30 text-xs sm:text-sm font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition">
+              <input type="text" id="tool-search" placeholder="ツール名・用途・拡張子で瞬時に絞り込み... (/ キーで検索)" class="w-full pl-11 pr-20 py-3 sm:py-3.5 rounded-2xl border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/10 dark:bg-black/30 text-xs sm:text-sm font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition">
               <div class="absolute right-3.5 flex items-center space-x-1.5">
-                <kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono rounded border border-[#1e2333] hover:border-[#10b981]/50 opacity-50 bg-black/20">Ctrl+K</kbd>
+                <kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono rounded border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] opacity-50 bg-black/20">Ctrl+K</kbd>
                 <button id="btn-clear-search" class="hidden text-xs opacity-60 hover:opacity-100 font-mono px-1">&times;</button>
               </div>
             </div>
@@ -367,20 +533,20 @@
           </div>
 
           <!-- Empty State (Hidden by default) -->
-          <div id="no-tools-found" class="hidden text-center py-12 px-4 rounded-2xl border border-[#1e2333] hover:border-[#10b981]/50 bg-black/5 dark:bg-white/5 mb-12">
+          <div id="no-tools-found" class="hidden text-center py-12 px-4 rounded-2xl border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/5 dark:bg-white/5 mb-12">
             <p class="text-sm font-mono opacity-75 mb-3">該当するツールが見つかりませんでした。別のキーワードをお試しください。</p>
-            <button id="btn-reset-filter" class="px-4 py-1.5 rounded-xl text-xs font-mono font-bold border border-[#1e2333] hover:border-[#10b981]/50 hover:bg-white/10 transition">
+            <button id="btn-reset-filter" class="px-4 py-1.5 rounded-xl text-xs font-mono font-bold border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] hover:bg-white/10 transition">
               フィルターをリセット
             </button>
           </div>
 
           <!-- Grid of Tools (1 col mobile, 2 cols tablet, 3 cols desktop) -->
           <div id="tools-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5 mb-12 sm:mb-16">
-            <a href="/ja/css-box-shadow-generator" data-search="css box shadow (ボックスシャドウ) 視覚的ジェネレーター ぼかし半径、広がり、x/y座標、内側シャドウ(inset)をスライダーで直感調整。リアルタイムプレビューからcssとtailwindを即座にコピー。 css ボックスシャドウ 生成 css 影 ジェネレーター box shadow 作成 ツール tailwind シャドウ 生成 柔らかい影 css 作成 多層シャドウ css 内側シャドウ 作成 css ドロップシャドウ オンライン css-box-shadow-generator" class="tool-card bg-[#11141d] rounded-xl p-5 sm:p-6 border border-[#1e2333] hover:border-[#10b981]/50 shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% ローカル実行</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">CSS Box Shadow (ボックスシャドウ) 視覚的ジェネレーター</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">ぼかし半径、広がり、X/Y座標、内側シャドウ(Inset)をスライダーで直感調整。リアルタイムプレビューからCSSとTailwindを即座にコピー。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#css ボックスシャドウ 生成</span><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#css 影 ジェネレーター</span><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#box shadow 作成 ツール</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #10b981"><span>ツールを開く</span><span>&rarr;</span></div></div></a>
-<a href="/ja/css-gradient-background-generator" data-search="css グラデーション背景生成ツール (線形・放射状・円錐) 線形(linear)、放射状(radial)、円錐状(conic)のcssグラデーションを直感操作で作成。角度調整、マルチカラー分岐、即座cssコピー。 css グラデーション 生成 線形グラデーション 作成 放射状グラデーション css 背景グラデーション ツール おしゃれなグラデーション css css グラデーション 配色 グラデーション コード コピー css3 背景 変換 css-gradient-background-generator" class="tool-card bg-[#11141d] rounded-xl p-5 sm:p-6 border border-[#1e2333] hover:border-[#10b981]/50 shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% ローカル実行</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">CSS グラデーション背景生成ツール (線形・放射状・円錐)</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">線形(Linear)、放射状(Radial)、円錐状(Conic)のCSSグラデーションを直感操作で作成。角度調整、マルチカラー分岐、即座CSSコピー。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#css グラデーション 生成</span><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#線形グラデーション 作成</span><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#放射状グラデーション css</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #10b981"><span>ツールを開く</span><span>&rarr;</span></div></div></a>
-<a href="/ja/wcag-color-contrast-checker" data-search="wcag 2.1 色コントラスト比チェッカー (aa・aaa アクセシビリティ診断) 背景色と文字色のコントラスト比をミリ秒算出。webアクセシビリティ国際規格wcag 2.1のaaおよびaaa適合判定を瞬時に表示。 wcag コントラスト比 チェッカー 色コントラスト比 計算 アクセシビリティ 色 診断 wcag aa aaa 判定 文字色 背景色 コントラスト 色覚多様性 シミュレーション アクセシブル 配色 ツール コントラスト比 計算機 wcag-color-contrast-checker" class="tool-card bg-[#11141d] rounded-xl p-5 sm:p-6 border border-[#1e2333] hover:border-[#10b981]/50 shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% ローカル実行</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">WCAG 2.1 色コントラスト比チェッカー (AA・AAA アクセシビリティ診断)</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">背景色と文字色のコントラスト比をミリ秒算出。Webアクセシビリティ国際規格WCAG 2.1のAAおよびAAA適合判定を瞬時に表示。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#wcag コントラスト比 チェッカー</span><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#色コントラスト比 計算</span><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#アクセシビリティ 色 診断</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #10b981"><span>ツールを開く</span><span>&rarr;</span></div></div></a>
-<a href="/ja/pixel-to-rem-em-converter" data-search="px (ピクセル) ⇄ rem / em 相互換算ツール (レスポンシブ単位) 基準フォントサイズ(16px等)をベースに、pxとrem、emを双方向でリアルタイム換算。メディアクエリ用のcssスニペットも自動生成。 px rem 換算 オンライン ピクセル rem 変換 ツール rem px 計算機 px em 変換 css単位 相互換算 ベースサイズ 16px 換算 レスポンシブ 単位 計算 フォントサイズ px rem 変換 pixel-to-rem-em-converter" class="tool-card bg-[#11141d] rounded-xl p-5 sm:p-6 border border-[#1e2333] hover:border-[#10b981]/50 shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% ローカル実行</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">PX (ピクセル) ⇄ REM / EM 相互換算ツール (レスポンシブ単位)</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">基準フォントサイズ(16px等)をベースに、PXとREM、EMを双方向でリアルタイム換算。メディアクエリ用のCSSスニペットも自動生成。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#px rem 換算 オンライン</span><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#ピクセル rem 変換 ツール</span><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#rem px 計算機</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #10b981"><span>ツールを開く</span><span>&rarr;</span></div></div></a>
-<a href="/ja/svg-to-css-data-uri-converter" data-search="svg コード ⇄ css data uri & base64 背景画像変換ツール svgソースコードやファイルをブラウザ内で最適化し、css background-image用のdata uriやbase64形式へ瞬時にエンコード出力。 svg data uri 変換 オンライン svg css 背景 変換 svg base64 変換 svg urlエンコード インライン svg css svg 背景画像 作成 svg uri 生成 ツール svg埋め込み css svg-to-css-data-uri-converter" class="tool-card bg-[#11141d] rounded-xl p-5 sm:p-6 border border-[#1e2333] hover:border-[#10b981]/50 shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% ローカル実行</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">SVG コード ⇄ CSS Data URI & Base64 背景画像変換ツール</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">SVGソースコードやファイルをブラウザ内で最適化し、CSS background-image用のData URIやBase64形式へ瞬時にエンコード出力。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#svg data uri 変換 オンライン</span><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#svg css 背景 変換</span><span class='inline-block bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/30 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#svg base64 変換</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #10b981"><span>ツールを開く</span><span>&rarr;</span></div></div></a>
+            <a href="/ja/css-box-shadow-generator" data-search="css box shadow (ボックスシャドウ) 視覚的ジェネレーター ぼかし半径、広がり、x/y座標、内側シャドウ(inset)をスライダーで直感調整。リアルタイムプレビューからcssとtailwindを即座にコピー。 css ボックスシャドウ 生成 css 影 ジェネレーター box shadow 作成 ツール tailwind シャドウ 生成 柔らかい影 css 作成 多層シャドウ css 内側シャドウ 作成 css ドロップシャドウ オンライン css-box-shadow-generator" class="tool-card bg-white dark:bg-[#202024] rounded-xl p-5 sm:p-6 border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% ローカル実行</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">CSS Box Shadow (ボックスシャドウ) 視覚的ジェネレーター</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">ぼかし半径、広がり、X/Y座標、内側シャドウ(Inset)をスライダーで直感調整。リアルタイムプレビューからCSSとTailwindを即座にコピー。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#css ボックスシャドウ 生成</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#css 影 ジェネレーター</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#box shadow 作成 ツール</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #b45309"><span>ツールを開く</span><span>&rarr;</span></div></div></a>
+<a href="/ja/css-gradient-background-generator" data-search="css グラデーション背景生成ツール (線形・放射状・円錐) 線形(linear)、放射状(radial)、円錐状(conic)のcssグラデーションを直感操作で作成。角度調整、マルチカラー分岐、即座cssコピー。 css グラデーション 生成 線形グラデーション 作成 放射状グラデーション css 背景グラデーション ツール おしゃれなグラデーション css css グラデーション 配色 グラデーション コード コピー css3 背景 変換 css-gradient-background-generator" class="tool-card bg-white dark:bg-[#202024] rounded-xl p-5 sm:p-6 border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% ローカル実行</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">CSS グラデーション背景生成ツール (線形・放射状・円錐)</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">線形(Linear)、放射状(Radial)、円錐状(Conic)のCSSグラデーションを直感操作で作成。角度調整、マルチカラー分岐、即座CSSコピー。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#css グラデーション 生成</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#線形グラデーション 作成</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#放射状グラデーション css</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #b45309"><span>ツールを開く</span><span>&rarr;</span></div></div></a>
+<a href="/ja/wcag-color-contrast-checker" data-search="wcag 2.1 色コントラスト比チェッカー (aa・aaa アクセシビリティ診断) 背景色と文字色のコントラスト比をミリ秒算出。webアクセシビリティ国際規格wcag 2.1のaaおよびaaa適合判定を瞬時に表示。 wcag コントラスト比 チェッカー 色コントラスト比 計算 アクセシビリティ 色 診断 wcag aa aaa 判定 文字色 背景色 コントラスト 色覚多様性 シミュレーション アクセシブル 配色 ツール コントラスト比 計算機 wcag-color-contrast-checker" class="tool-card bg-white dark:bg-[#202024] rounded-xl p-5 sm:p-6 border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% ローカル実行</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">WCAG 2.1 色コントラスト比チェッカー (AA・AAA アクセシビリティ診断)</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">背景色と文字色のコントラスト比をミリ秒算出。Webアクセシビリティ国際規格WCAG 2.1のAAおよびAAA適合判定を瞬時に表示。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#wcag コントラスト比 チェッカー</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#色コントラスト比 計算</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#アクセシビリティ 色 診断</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #b45309"><span>ツールを開く</span><span>&rarr;</span></div></div></a>
+<a href="/ja/pixel-to-rem-em-converter" data-search="px (ピクセル) ⇄ rem / em 相互換算ツール (レスポンシブ単位) 基準フォントサイズ(16px等)をベースに、pxとrem、emを双方向でリアルタイム換算。メディアクエリ用のcssスニペットも自動生成。 px rem 換算 オンライン ピクセル rem 変換 ツール rem px 計算機 px em 変換 css単位 相互換算 ベースサイズ 16px 換算 レスポンシブ 単位 計算 フォントサイズ px rem 変換 pixel-to-rem-em-converter" class="tool-card bg-white dark:bg-[#202024] rounded-xl p-5 sm:p-6 border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% ローカル実行</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">PX (ピクセル) ⇄ REM / EM 相互換算ツール (レスポンシブ単位)</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">基準フォントサイズ(16px等)をベースに、PXとREM、EMを双方向でリアルタイム換算。メディアクエリ用のCSSスニペットも自動生成。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#px rem 換算 オンライン</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#ピクセル rem 変換 ツール</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#rem px 計算機</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #b45309"><span>ツールを開く</span><span>&rarr;</span></div></div></a>
+<a href="/ja/svg-to-css-data-uri-converter" data-search="svg コード ⇄ css data uri & base64 背景画像変換ツール svgソースコードやファイルをブラウザ内で最適化し、css background-image用のdata uriやbase64形式へ瞬時にエンコード出力。 svg data uri 変換 オンライン svg css 背景 変換 svg base64 変換 svg urlエンコード インライン svg css svg 背景画像 作成 svg uri 生成 ツール svg埋め込み css svg-to-css-data-uri-converter" class="tool-card bg-white dark:bg-[#202024] rounded-xl p-5 sm:p-6 border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% ローカル実行</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">SVG コード ⇄ CSS Data URI & Base64 背景画像変換ツール</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">SVGソースコードやファイルをブラウザ内で最適化し、CSS background-image用のData URIやBase64形式へ瞬時にエンコード出力。</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#svg data uri 変換 オンライン</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#svg css 背景 変換</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#svg base64 変換</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #b45309"><span>ツールを開く</span><span>&rarr;</span></div></div></a>
           </div>
         </div>
 
@@ -454,7 +620,7 @@
   </main>
 
   <!-- Internal Linking Matrix -->
-  <section class="border-t border-[#1e2333] py-12 px-4 sm:px-6 lg:px-8 opacity-95">
+  <section class="border-t border-[#e4e4e7] dark:border-[#27272a] py-12 px-4 sm:px-6 lg:px-8 opacity-95">
     <div class="max-w-7xl mx-auto">
       <div class="flex items-center justify-between mb-6">
         <h3 class="text-sm font-bold uppercase tracking-wider opacity-80 font-mono">
@@ -465,7 +631,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         
-        <a href="/ja/css-box-shadow-generator" class="p-3.5 rounded-lg border border-[#1e2333] hover:border-[#10b981]/50 bg-[#11141d] transition group block">
+        <a href="/ja/css-box-shadow-generator" class="p-3.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-white dark:bg-[#202024] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             CSS Box Shadow (ボックスシャドウ) 視覚的ジェネレーター
           </div>
@@ -474,7 +640,7 @@
           </p>
         </a>
         
-        <a href="/ja/css-gradient-background-generator" class="p-3.5 rounded-lg border border-[#1e2333] hover:border-[#10b981]/50 bg-[#11141d] transition group block">
+        <a href="/ja/css-gradient-background-generator" class="p-3.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-white dark:bg-[#202024] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             CSS グラデーション背景生成ツール (線形・放射状・円錐)
           </div>
@@ -483,7 +649,7 @@
           </p>
         </a>
         
-        <a href="/ja/wcag-color-contrast-checker" class="p-3.5 rounded-lg border border-[#1e2333] hover:border-[#10b981]/50 bg-[#11141d] transition group block">
+        <a href="/ja/wcag-color-contrast-checker" class="p-3.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-white dark:bg-[#202024] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             WCAG 2.1 色コントラスト比チェッカー (AA・AAA アクセシビリティ診断)
           </div>
@@ -492,7 +658,7 @@
           </p>
         </a>
         
-        <a href="/ja/pixel-to-rem-em-converter" class="p-3.5 rounded-lg border border-[#1e2333] hover:border-[#10b981]/50 bg-[#11141d] transition group block">
+        <a href="/ja/pixel-to-rem-em-converter" class="p-3.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-white dark:bg-[#202024] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             PX (ピクセル) ⇄ REM / EM 相互換算ツール (レスポンシブ単位)
           </div>
@@ -501,7 +667,7 @@
           </p>
         </a>
         
-        <a href="/ja/svg-to-css-data-uri-converter" class="p-3.5 rounded-lg border border-[#1e2333] hover:border-[#10b981]/50 bg-[#11141d] transition group block">
+        <a href="/ja/svg-to-css-data-uri-converter" class="p-3.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-white dark:bg-[#202024] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             SVG コード ⇄ CSS Data URI & Base64 背景画像変換ツール
           </div>
@@ -515,7 +681,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-[#1e2333] py-8 text-center text-xs opacity-75">
+  <footer class="border-t border-[#e4e4e7] dark:border-[#27272a] py-8 text-center text-xs opacity-75">
     <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
       <div>
         &copy; 2026 <strong>CssBox Studio</strong>. 完全ブラウザ内ローカル処理 · Cloudflare グローバルエッジ高速配信。
@@ -529,7 +695,7 @@
   </footer>
 
   <!-- Floating Back to Top Button -->
-  <button id="back-to-top-btn" type="button" class="fixed bottom-6 right-6 p-2.5 rounded-full bg-[#11141d] border border-[#1e2333] hover:border-[#10b981]/50 shadow-xl opacity-0 pointer-events-none transition-all duration-300 z-40 hover:scale-110 focus:outline-none" aria-label="Back to top" title="Back to top">
+  <button id="back-to-top-btn" type="button" class="fixed bottom-6 right-6 p-2.5 rounded-full bg-white dark:bg-[#202024] border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-xl opacity-0 pointer-events-none transition-all duration-300 z-40 hover:scale-110 focus:outline-none" aria-label="Back to top" title="Back to top">
     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
     </svg>
@@ -603,6 +769,73 @@
         const s = document.getElementById('tool-search');
         if (s) { s.focus(); s.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
       }, 300);
+    }
+
+    // 0.4 Dynamic Multi-Theme Switcher
+    const THEME_NAMES = {
+      'terminal_dev': '黒 (ターミナル)',
+      'cyber_electric': 'サイバーネオン',
+      'midnight_purple': 'ミッドナイトパープル',
+      'swiss_minimal': 'ミニマル (白)'
+    };
+    const THEME_ICONS = {
+      'terminal_dev': '🖤',
+      'cyber_electric': '🌌',
+      'midnight_purple': '🟣',
+      'swiss_minimal': '⚪'
+    };
+
+    window.switchTheme = function(themeId, notify) {
+      try {
+        localStorage.setItem('agy_theme', themeId);
+      } catch (e) {}
+      document.documentElement.setAttribute('data-theme', themeId);
+      if (themeId === 'swiss_minimal') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+
+      const nameEl = document.getElementById('theme-current-name');
+      const iconEl = document.getElementById('theme-current-icon');
+      if (nameEl && THEME_NAMES[themeId]) nameEl.textContent = THEME_NAMES[themeId];
+      if (iconEl && THEME_ICONS[themeId]) iconEl.textContent = THEME_ICONS[themeId];
+
+      document.querySelectorAll('#theme-dropdown-menu [data-theme-opt]').forEach(btn => {
+        const isCurrent = btn.getAttribute('data-theme-opt') === themeId;
+        const chk = btn.querySelector('.theme-check');
+        if (chk) chk.style.opacity = isCurrent ? '1' : '0';
+      });
+
+      const menu = document.getElementById('theme-dropdown-menu');
+      if (menu) menu.classList.add('hidden');
+
+      if (notify && typeof window.showToast === 'function') {
+        window.showToast(THEME_NAMES[themeId] || themeId);
+      }
+    };
+
+    // Initialize saved theme
+    try {
+      const saved = localStorage.getItem('agy_theme');
+      if (saved && THEME_NAMES[saved]) {
+        window.switchTheme(saved, false);
+      } else {
+        window.switchTheme('editorial_paper', false);
+      }
+    } catch (e) {}
+
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    const themeMenu = document.getElementById('theme-dropdown-menu');
+    if (themeBtn && themeMenu) {
+      themeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        themeMenu.classList.toggle('hidden');
+        if (typeof langMenu !== 'undefined' && langMenu && !langMenu.classList.contains('hidden')) langMenu.classList.add('hidden');
+      });
+      document.addEventListener('click', () => {
+        if (!themeMenu.classList.contains('hidden')) themeMenu.classList.add('hidden');
+      });
     }
 
     // 1. Language dropdown menu
