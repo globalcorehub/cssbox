@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CssBox Studio - Herramientas Online para Desarrolladores</title>
-  <meta name="description" content="Utilidades web esenciales, rápidas y seguras. Ejecución 100% local en su navegador sin esperas de servidor.">
+  <title>CSSBox Studio - Laboratorio de Diseño CSS y Front-End</title>
+  <meta name="description" content="Generadores visuales interactivos para sombras, gradientes, unidades y contraste accesible. Copie CSS y Tailwind al instante.">
   <link rel="canonical" href="https://cssbox.globalcorehub.com/es/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://cssbox.globalcorehub.com/sitemap.xml">
 
   <!-- Dynamic Zero-Latency SVG Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2310b981'/><text y='70' x='18' font-size='65' font-family='monospace' font-weight='bold' fill='%230c0e14'>&gt;_</text></svg>">
@@ -13,6 +14,7 @@
   <!-- International SEO hreflang tags (7 Languages) -->
   <link rel="alternate" hreflang="en" href="https://cssbox.globalcorehub.com/" />
   <link rel="alternate" hreflang="zh-CN" href="https://cssbox.globalcorehub.com/zh" />
+  <link rel="alternate" hreflang="zh" href="https://cssbox.globalcorehub.com/zh" />
   <link rel="alternate" hreflang="es" href="https://cssbox.globalcorehub.com/es" />
   <link rel="alternate" hreflang="pt" href="https://cssbox.globalcorehub.com/pt" />
   <link rel="alternate" hreflang="de" href="https://cssbox.globalcorehub.com/de" />
@@ -23,27 +25,32 @@
   <!-- Open Graph & Social Cards -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cssbox.globalcorehub.com/es/">
-  <meta property="og:title" content="CssBox Studio - Herramientas Online para Desarrolladores">
-  <meta property="og:description" content="Utilidades web esenciales, rápidas y seguras. Ejecución 100% local en su navegador sin esperas de servidor.">
-  <meta property="og:site_name" content="CssBox Studio">
-  <meta property="og:locale" content="es">
+  <meta property="og:title" content="CSSBox Studio - Laboratorio de Diseño CSS y Front-End">
+  <meta property="og:description" content="Generadores visuales interactivos para sombras, gradientes, unidades y contraste accesible. Copie CSS y Tailwind al instante.">
+  <meta property="og:site_name" content="CSSBox Studio">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:image" content="https://cssbox.globalcorehub.com/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CSSBox Studio">
 
   <!-- Twitter Social Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CssBox Studio - Herramientas Online para Desarrolladores">
-  <meta name="twitter:description" content="Utilidades web esenciales, rápidas y seguras. Ejecución 100% local en su navegador sin esperas de servidor.">
+  <meta name="twitter:title" content="CSSBox Studio - Laboratorio de Diseño CSS y Front-End">
+  <meta name="twitter:description" content="Generadores visuales interactivos para sombras, gradientes, unidades y contraste accesible. Copie CSS y Tailwind al instante.">
+  <meta name="twitter:image" content="https://cssbox.globalcorehub.com/og-image.svg">
 
   <!-- Multi-Theme Typography Imports (JetBrains Mono, Plus Jakarta Sans, Space Grotesk) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
 
   <!-- Immediate Zero-FOUC Theme Initializer -->
   <script>
     (function() {
       try {
-        var t = localStorage.getItem('agy_theme') || 'editorial_paper';
+        var t = localStorage.getItem('agy_theme') || 'midnight_purple';
         document.documentElement.setAttribute('data-theme', t);
         if (t === 'swiss_minimal') {
           document.documentElement.classList.remove('dark');
@@ -62,7 +69,7 @@
       theme: {
         extend: {
           colors: {
-            brand: '#b45309'
+            brand: '#c084fc'
           }
         }
       }
@@ -71,10 +78,10 @@
 
   <!-- Theme Specific & Dynamic Multi-Theme Styles -->
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
     
-        h1, h2, h3, .serif-heading { font-family: 'Newsreader', Georgia, serif; }
-        .editorial-rule { border-top: 2px solid #27272a; }
+        .purple-glow { text-shadow: 0 0 10px rgba(192,132,252,0.6); }
+        .purple-box { box-shadow: 0 0 15px rgba(192,132,252,0.2); }
         
 
     /* Dynamic Multi-Theme Overrides */
@@ -162,15 +169,30 @@
     }
   </style>
 
+  <!-- Structured Data JSON-LD (WebSite & SearchAction) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CSSBox Studio",
+    "url": "https://cssbox.globalcorehub.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://cssbox.globalcorehub.com/?q={search_term_string}#tool-search",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
   <!-- Structured Data JSON-LD (WebApplication) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "CssBox Studio - Herramientas Online para Desarrolladores",
+    "name": "CSSBox Studio - Laboratorio de Diseño CSS y Front-End",
     "url": "https://cssbox.globalcorehub.com/es/",
-    "description": "Utilidades web esenciales, rápidas y seguras. Ejecución 100% local en su navegador sin esperas de servidor.",
-    "applicationCategory": "UtilitiesApplication",
+    "description": "Generadores visuales interactivos para sombras, gradientes, unidades y contraste accesible. Copie CSS y Tailwind al instante.",
+    "applicationCategory": "DesignApplication",
     "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
@@ -184,32 +206,22 @@
   <!-- Tech Stack Scripts (Alpine.js / Canvas loop / Terminal runtime) -->
   
         <script>
-        // Reading Progress Bar
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            const bar = document.getElementById('reading-bar');
-            if (bar) bar.style.width = scrolled + '%';
-        });
         window.showToast = function(msg) {
             const toast = document.createElement('div');
-            toast.className = 'fixed bottom-6 right-6 z-50 bg-[#27272a] dark:bg-[#f4f4f5] text-[#f4f4f5] dark:text-[#27272a] text-xs px-4 py-2.5 rounded shadow-lg font-serif italic';
-            toast.textContent = msg;
+            toast.className = 'fixed bottom-6 right-6 z-50 bg-[#160e2b] text-[#c084fc] border border-[#c084fc] font-mono text-xs px-4 py-2 rounded-lg shadow-[0_0_15px_rgba(192,132,252,0.3)] flex items-center space-x-2';
+            toast.innerHTML = '<span>✦</span><span>' + msg + '</span>';
             document.body.appendChild(toast);
             setTimeout(() => toast.remove(), 2500);
         };
         </script>
         
 </head>
-<body class="bg-[#fcfbf9] dark:bg-[#18181b] text-[#27272a] dark:text-[#f4f4f5] min-h-screen flex flex-col transition-colors duration-200">
+<body class="bg-[#0b0716] text-[#e9d5ff] min-h-screen flex flex-col transition-colors duration-200">
 
-  
-  <div id="reading-bar" class="fixed top-0 left-0 h-1 bg-[#b45309] z-[100] transition-all duration-100" style="width: 0%"></div>
   
 
   <!-- Header Navigation (Responsive Desktop & Mobile) -->
-  <header class="sticky top-0 z-50 bg-[#fcfbf9]/90 dark:bg-[#18181b]/90 backdrop-blur-md border-b border-[#e4e4e7] dark:border-[#27272a]">
+  <header class="sticky top-0 z-50 bg-[#160e2b]/90 backdrop-blur-xl border-b border-[#3b1d68]">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
       <!-- Brand & Terminal Indicator -->
@@ -217,11 +229,11 @@
         
 
         <a href="/es/" class="flex items-center space-x-2.5 sm:space-x-3 group">
-          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center font-black text-base sm:text-lg bg-[#b45309] hover:bg-[#92400e] text-white font-medium rounded-lg">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center font-black text-base sm:text-lg bg-[#c084fc] hover:bg-[#a855f7] text-[#0b0716] font-extrabold shadow-[0_0_20px_rgba(192,132,252,0.4)]">
             C
           </div>
           <span class="text-base sm:text-lg font-extrabold tracking-tight truncate max-w-[150px] sm:max-w-none">
-            CssBox Studio
+            CSSBox Studio
           </span>
         </a>
       </div>
@@ -240,7 +252,7 @@
           </button>
 
           <!-- Dropdown Panel (Categorized & Compact) -->
-          <div id="tools-dropdown-panel" class="hidden absolute left-0 mt-1.5 w-72 sm:w-80 rounded-2xl bg-white dark:bg-[#202024] border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] shadow-2xl z-50 p-2 font-mono text-xs backdrop-blur-xl">
+          <div id="tools-dropdown-panel" class="hidden absolute left-0 mt-1.5 w-72 sm:w-80 rounded-2xl bg-[#160e2b] border border-[#3b1d68] hover:border-[#c084fc] shadow-[0_4px_25px_rgba(192,132,252,0.15)] shadow-2xl z-50 p-2 font-mono text-xs backdrop-blur-xl">
             <div class="flex items-center justify-between px-2.5 py-1 text-[10px] uppercase tracking-wider opacity-50 border-b border-white/10 mb-1">
               <span>Directorio de Utilidades para Programadores</span>
               <span>5 Herramientas</span>
@@ -289,7 +301,7 @@
               
             </div>
             <div class="mt-1.5 pt-1.5 border-t border-white/10 px-2 flex items-center justify-between">
-              <a href="/es/#tools-grid" class="text-[11px] font-bold hover:underline flex items-center space-x-1" style="color: #b45309">
+              <a href="/es/#tools-grid" class="text-[11px] font-bold hover:underline flex items-center space-x-1" style="color: #c084fc">
                 <span>Ver Todo el Catálogo</span>
                 <span>&rarr;</span>
               </a>
@@ -309,24 +321,24 @@
       <!-- Action Items & Language Selector & Quick Search & Mobile Hamburger -->
       <div class="flex items-center space-x-2 sm:space-x-3">
         <!-- Quick Search Trigger in Header -->
-        <button id="global-search-btn" type="button" class="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/15 hover:bg-black/30 text-xs font-mono opacity-80 hover:opacity-100 transition" title="Buscar por nombre de herramienta, palabra clave o formato... (Pulsa /)">
+        <button id="global-search-btn" type="button" class="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg border border-[#3b1d68] hover:border-[#c084fc] bg-black/15 hover:bg-black/30 text-xs font-mono opacity-80 hover:opacity-100 transition" title="Buscar por nombre de herramienta, palabra clave o formato... (Pulsa /)">
           <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
           <span class="hidden sm:inline opacity-70">Buscar</span>
-          <kbd class="hidden sm:inline text-[9px] px-1 py-0.5 rounded border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] opacity-50 bg-black/20 font-mono">Ctrl+K</kbd>
+          <kbd class="hidden sm:inline text-[9px] px-1 py-0.5 rounded border border-[#3b1d68] hover:border-[#c084fc] opacity-50 bg-black/20 font-mono">Ctrl+K</kbd>
         </button>
 
         <!-- Interactive Multi-Theme Selector Dropdown -->
         <div class="relative inline-block text-left" id="theme-selector-container">
-          <button id="theme-toggle-btn" type="button" class="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] hover:opacity-90 transition bg-black/20" title="Estilo de Tema">
+          <button id="theme-toggle-btn" type="button" class="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-[#3b1d68] hover:border-[#c084fc] hover:opacity-90 transition bg-black/20" title="Estilo de Tema">
             <span id="theme-current-icon" class="text-sm leading-none">🖤</span>
             <span id="theme-current-name" class="hidden xl:inline text-xs font-medium">Terminal Negro</span>
             <svg class="w-3 h-3 opacity-60 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
-          <div id="theme-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-xl bg-white dark:bg-[#202024] border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] z-50 py-1.5 font-mono text-xs shadow-2xl backdrop-blur-xl">
+          <div id="theme-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-xl bg-[#160e2b] border border-[#3b1d68] hover:border-[#c084fc] shadow-[0_4px_25px_rgba(192,132,252,0.15)] z-50 py-1.5 font-mono text-xs shadow-2xl backdrop-blur-xl">
             <div class="px-3 py-1 text-[10px] uppercase tracking-wider opacity-50 border-b border-white/10 mb-1">
               Estilo de Tema
             </div>
@@ -363,12 +375,12 @@
 
         <!-- 7-Language International Dropdown -->
         <div class="relative inline-block text-left" id="lang-container">
-          <button id="lang-toggle-btn" type="button" class="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] hover:opacity-90 transition bg-black/20">
+          <button id="lang-toggle-btn" type="button" class="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-[#3b1d68] hover:border-[#c084fc] hover:opacity-90 transition bg-black/20">
             <span>[ES]</span>
             <span class="font-bold">ES</span>
             <span class="text-[9px] opacity-60">&darr;</span>
           </button>
-          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-36 rounded-xl bg-white dark:bg-[#202024] border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] z-50 py-1.5 font-mono text-xs shadow-2xl">
+          <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-2 w-36 rounded-xl bg-[#160e2b] border border-[#3b1d68] hover:border-[#c084fc] shadow-[0_4px_25px_rgba(192,132,252,0.15)] z-50 py-1.5 font-mono text-xs shadow-2xl">
             
             <a href="/" class="flex items-center justify-between px-3 py-1.5 hover:bg-white/10 transition opacity-75">
               <span>[EN] English</span>
@@ -409,7 +421,7 @@
         </div>
 
         <!-- Mobile Menu Toggle Button (Visible on mobile <768px) -->
-        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] hover:opacity-80 transition flex items-center justify-center bg-black/20" aria-label="Toggle Navigation Menu">
+        <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg border border-[#3b1d68] hover:border-[#c084fc] hover:opacity-80 transition flex items-center justify-center bg-black/20" aria-label="Toggle Navigation Menu">
           <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -421,45 +433,45 @@
     </div>
 
     <!-- Mobile Collapsible Navigation Menu Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-[#e4e4e7] dark:border-[#27272a] bg-[#fcfbf9]/90 dark:bg-[#18181b]/90 backdrop-blur-md px-4 pt-3 pb-5 space-y-2 backdrop-blur-lg">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-[#3b1d68] bg-[#160e2b]/90 backdrop-blur-xl px-4 pt-3 pb-5 space-y-2 backdrop-blur-lg">
       <a href="/es/" class="block px-3 py-2 rounded-xl text-sm font-semibold hover:bg-white/10 transition">Inicio</a>
 
       <!-- Mobile Theme Switcher Bar -->
       <div class="py-2 border-b border-white/10 mb-2">
         <div class="text-[10px] uppercase font-mono opacity-50 mb-1.5">Estilo de Tema</div>
         <div class="grid grid-cols-4 gap-1.5">
-          <button onclick="window.switchTheme('terminal_dev', true)" class="p-1.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+          <button onclick="window.switchTheme('terminal_dev', true)" title="Terminal Negro" class="p-1.5 rounded-lg border border-[#3b1d68] hover:border-[#c084fc] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
             <span class="w-2.5 h-2.5 rounded-full bg-[#10b981] mb-1"></span>
-            <span class="truncate max-w-full">Term</span>
+            <span class="truncate max-w-full">Terminal</span>
           </button>
-          <button onclick="window.switchTheme('cyber_electric', true)" class="p-1.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+          <button onclick="window.switchTheme('cyber_electric', true)" title="Cíber Neón" class="p-1.5 rounded-lg border border-[#3b1d68] hover:border-[#c084fc] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
             <span class="w-2.5 h-2.5 rounded-full bg-[#38bdf8] mb-1"></span>
-            <span class="truncate max-w-full">Cíbe</span>
+            <span class="truncate max-w-full">Cíber</span>
           </button>
-          <button onclick="window.switchTheme('midnight_purple', true)" class="p-1.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+          <button onclick="window.switchTheme('midnight_purple', true)" title="Púrpura Noche" class="p-1.5 rounded-lg border border-[#3b1d68] hover:border-[#c084fc] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
             <span class="w-2.5 h-2.5 rounded-full bg-[#c084fc] mb-1"></span>
-            <span class="truncate max-w-full">Púrp</span>
+            <span class="truncate max-w-full">Púrpura</span>
           </button>
-          <button onclick="window.switchTheme('swiss_minimal', true)" class="p-1.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
+          <button onclick="window.switchTheme('swiss_minimal', true)" title="Minimalista" class="p-1.5 rounded-lg border border-[#3b1d68] hover:border-[#c084fc] bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
             <span class="w-2.5 h-2.5 rounded-full bg-[#2563eb] mb-1"></span>
-            <span class="truncate max-w-full">Mini</span>
+            <span class="truncate max-w-full">Minimal</span>
           </button>
         </div>
       </div>
 
       <!-- Quick Search Trigger in Mobile Drawer -->
-      <button id="mobile-search-trigger" type="button" class="w-full flex items-center justify-between px-3 py-2 rounded-xl border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/20 text-xs font-mono opacity-80">
+      <button id="mobile-search-trigger" type="button" class="w-full flex items-center justify-between px-3 py-2 rounded-xl border border-[#3b1d68] hover:border-[#c084fc] bg-black/20 text-xs font-mono opacity-80">
         <span class="flex items-center space-x-2">
           <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
           <span>Buscar por nombre de herramienta, palabra clave o formato... (Pulsa /)</span>
         </span>
-        <kbd class="text-[10px] px-1.5 py-0.5 rounded border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] opacity-50">/</kbd>
+        <kbd class="text-[10px] px-1.5 py-0.5 rounded border border-[#3b1d68] hover:border-[#c084fc] opacity-50">/</kbd>
       </button>
 
       <!-- Tools Group in Mobile Drawer -->
-      <div class="pt-2 border-t border-[#e4e4e7] dark:border-[#27272a]">
+      <div class="pt-2 border-t border-[#3b1d68]">
         <div class="text-[10px] font-mono uppercase tracking-wider opacity-50 px-3 mb-1">Herramientas (5)</div>
         <div class="space-y-1 max-h-60 overflow-y-auto">
           
@@ -501,14 +513,14 @@
         <div class="max-w-7xl mx-auto">
           <!-- Hero Banner (Mobile & Desktop Responsive) -->
           <div class="text-center py-8 sm:py-12 md:py-16">
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs font-mono mb-4 sm:mb-5">
-              <span>Herramientas Online para Desarrolladores</span>
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs font-mono mb-4 sm:mb-5">
+              <span>Laboratorio de Diseño CSS y Front-End</span>
             </div>
             <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight mb-3 sm:mb-4">
-              CssBox Studio
+              CSSBox Studio
             </h1>
             <p class="max-w-2xl mx-auto text-xs sm:text-sm md:text-base opacity-75 leading-relaxed px-2">
-              Utilidades web esenciales, rápidas y seguras. Ejecución 100% local en su navegador sin esperas de servidor.
+              Generadores visuales interactivos para sombras, gradientes, unidades y contraste accesible. Copie CSS y Tailwind al instante.
             </p>
           </div>
 
@@ -520,9 +532,9 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
               </div>
-              <input type="text" id="tool-search" placeholder="Buscar por nombre de herramienta, palabra clave o formato... (Pulsa /)" class="w-full pl-11 pr-20 py-3 sm:py-3.5 rounded-2xl border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/10 dark:bg-black/30 text-xs sm:text-sm font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition">
+              <input type="text" id="tool-search" placeholder="Buscar por nombre de herramienta, palabra clave o formato... (Pulsa /)" class="w-full pl-11 pr-20 py-3 sm:py-3.5 rounded-2xl border border-[#3b1d68] hover:border-[#c084fc] bg-black/10 dark:bg-black/30 text-xs sm:text-sm font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition">
               <div class="absolute right-3.5 flex items-center space-x-1.5">
-                <kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono rounded border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] opacity-50 bg-black/20">Ctrl+K</kbd>
+                <kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono rounded border border-[#3b1d68] hover:border-[#c084fc] opacity-50 bg-black/20">Ctrl+K</kbd>
                 <button id="btn-clear-search" class="hidden text-xs opacity-60 hover:opacity-100 font-mono px-1">&times;</button>
               </div>
             </div>
@@ -533,20 +545,20 @@
           </div>
 
           <!-- Empty State (Hidden by default) -->
-          <div id="no-tools-found" class="hidden text-center py-12 px-4 rounded-2xl border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-black/5 dark:bg-white/5 mb-12">
+          <div id="no-tools-found" class="hidden text-center py-12 px-4 rounded-2xl border border-[#3b1d68] hover:border-[#c084fc] bg-black/5 dark:bg-white/5 mb-12">
             <p class="text-sm font-mono opacity-75 mb-3">No se encontraron herramientas que coincidan con la búsqueda.</p>
-            <button id="btn-reset-filter" class="px-4 py-1.5 rounded-xl text-xs font-mono font-bold border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] hover:bg-white/10 transition">
+            <button id="btn-reset-filter" class="px-4 py-1.5 rounded-xl text-xs font-mono font-bold border border-[#3b1d68] hover:border-[#c084fc] hover:bg-white/10 transition">
               Restablecer Filtro
             </button>
           </div>
 
           <!-- Grid of Tools (1 col mobile, 2 cols tablet, 3 cols desktop) -->
           <div id="tools-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5 mb-12 sm:mb-16">
-            <a href="/es/css-box-shadow-generator" data-search="generador de box shadow css y sombras multicapa visuales cree sombras css realistas con controles deslizantes interactivos para desenfoque, propagación y colores, con copia de código css y tailwind. generador box shadow css creador sombras css online sombras suaves css generador sombras tailwind box shadow herramienta visual generador sombras en capas sombra paralela css gratis estilos de sombra css css-box-shadow-generator" class="tool-card bg-white dark:bg-[#202024] rounded-xl p-5 sm:p-6 border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Generador de Box Shadow CSS y Sombras Multicapa Visuales</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Cree sombras CSS realistas con controles deslizantes interactivos para desenfoque, propagación y colores, con copia de código CSS y Tailwind.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#generador box shadow css</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#creador sombras css online</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#sombras suaves css</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #b45309"><span>Abrir Herramienta</span><span>&rarr;</span></div></div></a>
-<a href="/es/css-gradient-background-generator" data-search="generador de gradientes css (lineales, radiales y cónicos) diseñe gradientes lineales, radiales y cónicos con múltiples puntos de color, ángulos giratorios y catálogo de paletas modernas. generador gradientes css online crear degradado lineal css generador degradados radiales fondo gradiente css paletas de degradados web generador degradado bonito css gradient herramienta degradados modernos css css-gradient-background-generator" class="tool-card bg-white dark:bg-[#202024] rounded-xl p-5 sm:p-6 border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Generador de Gradientes CSS (Lineales, Radiales y Cónicos)</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Diseñe gradientes lineales, radiales y cónicos con múltiples puntos de color, ángulos giratorios y catálogo de paletas modernas.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#generador gradientes css online</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#crear degradado lineal css</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#generador degradados radiales</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #b45309"><span>Abrir Herramienta</span><span>&rarr;</span></div></div></a>
-<a href="/es/wcag-color-contrast-checker" data-search="comprobador de contraste de color wcag 2.1 (normas aa y aaa) compruebe la relación de contraste entre colores de texto y fondo para cumplir con las directrices de accesibilidad web wcag 2.1 aa y aaa. comprobador contraste wcag calculadora relacion contraste colores accesibilidad web contraste test wcag 2.1 aa aaa verificar contraste texto y fondo herramienta color accesible comprobar contraste hex diseno accesible colores wcag-color-contrast-checker" class="tool-card bg-white dark:bg-[#202024] rounded-xl p-5 sm:p-6 border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Comprobador de Contraste de Color WCAG 2.1 (Normas AA y AAA)</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Compruebe la relación de contraste entre colores de texto y fondo para cumplir con las directrices de accesibilidad web WCAG 2.1 AA y AAA.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#comprobador contraste wcag</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#calculadora relacion contraste colores</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#accesibilidad web contraste test</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #b45309"><span>Abrir Herramienta</span><span>&rarr;</span></div></div></a>
-<a href="/es/pixel-to-rem-em-converter" data-search="conversor de unidades responsive px a rem y em convierta píxeles a unidades relativas rem y em en ambas direcciones con tamaño base configurable y generación de reglas css. conversor px a rem online pixeles a rem calculadora convertir rem a px px a em conversor unidades css conversor fuente base 16px rem calculadora responsive unidades convertir medidas css pixel-to-rem-em-converter" class="tool-card bg-white dark:bg-[#202024] rounded-xl p-5 sm:p-6 border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Conversor de Unidades Responsive PX a REM y EM</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Convierta píxeles a unidades relativas REM y EM en ambas direcciones con tamaño base configurable y generación de reglas CSS.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#conversor px a rem online</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#pixeles a rem calculadora</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#convertir rem a px</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #b45309"><span>Abrir Herramienta</span><span>&rarr;</span></div></div></a>
-<a href="/es/svg-to-css-data-uri-converter" data-search="conversor de svg a data uri y fondo base64 css optimice y transforme código svg en data uris compactos para background-image en css y cadenas base64 con vista previa interactiva. convertir svg a data uri online svg a fondo css convertir svg a base64 url encode svg online insertar svg en css generador fondo svg css limpiar svg data uri herramienta svg uri svg-to-css-data-uri-converter" class="tool-card bg-white dark:bg-[#202024] rounded-xl p-5 sm:p-6 border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Conversor de SVG a Data URI y Fondo Base64 CSS</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Optimice y transforme código SVG en Data URIs compactos para background-image en CSS y cadenas Base64 con vista previa interactiva.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#convertir svg a data uri online</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#svg a fondo css</span><span class='inline-block bg-[#fef3c7] dark:bg-[#78350f]/30 text-[#92400e] dark:text-[#fde68a] text-xs font-serif italic text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#convertir svg a base64</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #b45309"><span>Abrir Herramienta</span><span>&rarr;</span></div></div></a>
+            <a href="/es/css-box-shadow-generator" data-search="generador de box shadow css y sombras multicapa visuales cree sombras css realistas con controles deslizantes interactivos para desenfoque, propagación y colores, con copia de código css y tailwind. generador box shadow css creador sombras css online sombras suaves css generador sombras tailwind box shadow herramienta visual generador sombras en capas sombra paralela css gratis estilos de sombra css css-box-shadow-generator" class="tool-card bg-[#160e2b] rounded-xl p-5 sm:p-6 border border-[#3b1d68] hover:border-[#c084fc] shadow-[0_4px_25px_rgba(192,132,252,0.15)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Generador de Box Shadow CSS y Sombras Multicapa Visuales</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Cree sombras CSS realistas con controles deslizantes interactivos para desenfoque, propagación y colores, con copia de código CSS y Tailwind.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#generador box shadow css</span><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#creador sombras css online</span><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#sombras suaves css</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #c084fc"><span>Abrir Herramienta</span><span>&rarr;</span></div></div></a>
+<a href="/es/css-gradient-background-generator" data-search="generador de gradientes css (lineales, radiales y cónicos) diseñe gradientes lineales, radiales y cónicos con múltiples puntos de color, ángulos giratorios y catálogo de paletas modernas. generador gradientes css online crear degradado lineal css generador degradados radiales fondo gradiente css paletas de degradados web generador degradado bonito css gradient herramienta degradados modernos css css-gradient-background-generator" class="tool-card bg-[#160e2b] rounded-xl p-5 sm:p-6 border border-[#3b1d68] hover:border-[#c084fc] shadow-[0_4px_25px_rgba(192,132,252,0.15)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Generador de Gradientes CSS (Lineales, Radiales y Cónicos)</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Diseñe gradientes lineales, radiales y cónicos con múltiples puntos de color, ángulos giratorios y catálogo de paletas modernas.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#generador gradientes css online</span><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#crear degradado lineal css</span><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#generador degradados radiales</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #c084fc"><span>Abrir Herramienta</span><span>&rarr;</span></div></div></a>
+<a href="/es/wcag-color-contrast-checker" data-search="comprobador de contraste de color wcag 2.1 (normas aa y aaa) compruebe la relación de contraste entre colores de texto y fondo para cumplir con las directrices de accesibilidad web wcag 2.1 aa y aaa. comprobador contraste wcag calculadora relacion contraste colores accesibilidad web contraste test wcag 2.1 aa aaa verificar contraste texto y fondo herramienta color accesible comprobar contraste hex diseno accesible colores wcag-color-contrast-checker" class="tool-card bg-[#160e2b] rounded-xl p-5 sm:p-6 border border-[#3b1d68] hover:border-[#c084fc] shadow-[0_4px_25px_rgba(192,132,252,0.15)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Comprobador de Contraste de Color WCAG 2.1 (Normas AA y AAA)</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Compruebe la relación de contraste entre colores de texto y fondo para cumplir con las directrices de accesibilidad web WCAG 2.1 AA y AAA.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#comprobador contraste wcag</span><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#calculadora relacion contraste colores</span><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#accesibilidad web contraste test</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #c084fc"><span>Abrir Herramienta</span><span>&rarr;</span></div></div></a>
+<a href="/es/pixel-to-rem-em-converter" data-search="conversor de unidades responsive px a rem y em convierta píxeles a unidades relativas rem y em en ambas direcciones con tamaño base configurable y generación de reglas css. conversor px a rem online pixeles a rem calculadora convertir rem a px px a em conversor unidades css conversor fuente base 16px rem calculadora responsive unidades convertir medidas css pixel-to-rem-em-converter" class="tool-card bg-[#160e2b] rounded-xl p-5 sm:p-6 border border-[#3b1d68] hover:border-[#c084fc] shadow-[0_4px_25px_rgba(192,132,252,0.15)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Conversor de Unidades Responsive PX a REM y EM</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Convierta píxeles a unidades relativas REM y EM en ambas direcciones con tamaño base configurable y generación de reglas CSS.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#conversor px a rem online</span><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#pixeles a rem calculadora</span><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#convertir rem a px</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #c084fc"><span>Abrir Herramienta</span><span>&rarr;</span></div></div></a>
+<a href="/es/svg-to-css-data-uri-converter" data-search="conversor de svg a data uri y fondo base64 css optimice y transforme código svg en data uris compactos para background-image en css y cadenas base64 con vista previa interactiva. convertir svg a data uri online svg a fondo css convertir svg a base64 url encode svg online insertar svg en css generador fondo svg css limpiar svg data uri herramienta svg uri svg-to-css-data-uri-converter" class="tool-card bg-[#160e2b] rounded-xl p-5 sm:p-6 border border-[#3b1d68] hover:border-[#c084fc] shadow-[0_4px_25px_rgba(192,132,252,0.15)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Conversor de SVG a Data URI y Fondo Base64 CSS</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Optimice y transforme código SVG en Data URIs compactos para background-image en CSS y cadenas Base64 con vista previa interactiva.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#convertir svg a data uri online</span><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#svg a fondo css</span><span class='inline-block bg-[#c084fc]/15 text-[#c084fc] border border-[#c084fc]/30 font-mono text-xs text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#convertir svg a base64</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #c084fc"><span>Abrir Herramienta</span><span>&rarr;</span></div></div></a>
           </div>
         </div>
 
@@ -620,7 +632,7 @@
   </main>
 
   <!-- Internal Linking Matrix -->
-  <section class="border-t border-[#e4e4e7] dark:border-[#27272a] py-12 px-4 sm:px-6 lg:px-8 opacity-95">
+  <section class="border-t border-[#3b1d68] py-12 px-4 sm:px-6 lg:px-8 opacity-95">
     <div class="max-w-7xl mx-auto">
       <div class="flex items-center justify-between mb-6">
         <h3 class="text-sm font-bold uppercase tracking-wider opacity-80 font-mono">
@@ -631,7 +643,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         
-        <a href="/es/css-box-shadow-generator" class="p-3.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-white dark:bg-[#202024] transition group block">
+        <a href="/es/css-box-shadow-generator" class="p-3.5 rounded-lg border border-[#3b1d68] hover:border-[#c084fc] bg-[#160e2b] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             Generador de Box Shadow CSS y Sombras Multicapa Visuales
           </div>
@@ -640,7 +652,7 @@
           </p>
         </a>
         
-        <a href="/es/css-gradient-background-generator" class="p-3.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-white dark:bg-[#202024] transition group block">
+        <a href="/es/css-gradient-background-generator" class="p-3.5 rounded-lg border border-[#3b1d68] hover:border-[#c084fc] bg-[#160e2b] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             Generador de Gradientes CSS (Lineales, Radiales y Cónicos)
           </div>
@@ -649,7 +661,7 @@
           </p>
         </a>
         
-        <a href="/es/wcag-color-contrast-checker" class="p-3.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-white dark:bg-[#202024] transition group block">
+        <a href="/es/wcag-color-contrast-checker" class="p-3.5 rounded-lg border border-[#3b1d68] hover:border-[#c084fc] bg-[#160e2b] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             Comprobador de Contraste de Color WCAG 2.1 (Normas AA y AAA)
           </div>
@@ -658,7 +670,7 @@
           </p>
         </a>
         
-        <a href="/es/pixel-to-rem-em-converter" class="p-3.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-white dark:bg-[#202024] transition group block">
+        <a href="/es/pixel-to-rem-em-converter" class="p-3.5 rounded-lg border border-[#3b1d68] hover:border-[#c084fc] bg-[#160e2b] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             Conversor de Unidades Responsive PX a REM y EM
           </div>
@@ -667,7 +679,7 @@
           </p>
         </a>
         
-        <a href="/es/svg-to-css-data-uri-converter" class="p-3.5 rounded-lg border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] bg-white dark:bg-[#202024] transition group block">
+        <a href="/es/svg-to-css-data-uri-converter" class="p-3.5 rounded-lg border border-[#3b1d68] hover:border-[#c084fc] bg-[#160e2b] transition group block">
           <div class="text-xs font-bold truncate group-hover:underline">
             Conversor de SVG a Data URI y Fondo Base64 CSS
           </div>
@@ -681,10 +693,16 @@
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-[#e4e4e7] dark:border-[#27272a] py-8 text-center text-xs opacity-75">
+  <footer class="border-t border-[#3b1d68] py-8 text-center text-xs opacity-75">
     <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div>
-        &copy; 2026 <strong>CssBox Studio</strong>. Ultra rápido · Privacidad garantizada en navegador · Acelerado con Cloudflare Edge.
+      <div class="text-left space-y-1">
+        <div>
+          &copy; 2026 <strong>CSSBox Studio</strong>. Ultra rápido · Privacidad garantizada en navegador · Acelerado con Cloudflare Edge.
+        </div>
+        <div class="text-[11px] opacity-60 font-mono">
+          🔒 100% Ejecución en Sandbox Local: Cero almacenamiento en servidor, cero subida de datos.
+          
+        </div>
       </div>
       <div class="flex space-x-4 font-mono text-[11px]">
         <a href="/sitemap.xml" class="hover:underline">sitemap.xml</a>
@@ -695,7 +713,7 @@
   </footer>
 
   <!-- Floating Back to Top Button -->
-  <button id="back-to-top-btn" type="button" class="fixed bottom-6 right-6 p-2.5 rounded-full bg-white dark:bg-[#202024] border border-[#e4e4e7] dark:border-[#27272a] hover:border-[#b45309] shadow-xl opacity-0 pointer-events-none transition-all duration-300 z-40 hover:scale-110 focus:outline-none" aria-label="Back to top" title="Back to top">
+  <button id="back-to-top-btn" type="button" class="fixed bottom-6 right-6 p-2.5 rounded-full bg-[#160e2b] border border-[#3b1d68] hover:border-[#c084fc] shadow-xl opacity-0 pointer-events-none transition-all duration-300 z-40 hover:scale-110 focus:outline-none" aria-label="Back to top" title="Back to top">
     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
     </svg>
@@ -821,7 +839,7 @@
       if (saved && THEME_NAMES[saved]) {
         window.switchTheme(saved, false);
       } else {
-        window.switchTheme('editorial_paper', false);
+        window.switchTheme('midnight_purple', false);
       }
     } catch (e) {}
 
