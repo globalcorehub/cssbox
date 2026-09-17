@@ -654,16 +654,7 @@
   const dropSvg = document.getElementById('drop-svg');
 
   function encodeSvg(raw) {
-    return raw
-      .replace(/[\t\n\r]+/g, ' ')
-      .replace(/\s\s+/g, ' ')
-      .replace(/"/g, "'")
-      .replace(/%/g, '%25')
-      .replace(/#/g, '%23')
-      .replace(/\x7B/g, '%7B')
-      .replace(/\x7D/g, '%7D')
-      .replace(/</g, '%3C')
-      .replace(/>/g, '%3E');
+    return encodeURIComponent(raw);
   }
 
   function render() {
@@ -673,8 +664,19 @@
       outCss.innerText = 'background-image: url("data:image/svg+xml,...");';
       return;
     }
-    preview.innerHTML = raw;
+    const parsed = new DOMParser().parseFromString(raw, 'image/svg+xml');
+    if (parsed.querySelector('parsererror') || parsed.documentElement.localName !== 'svg' ||
+        parsed.documentElement.namespaceURI !== 'http://www.w3.org/2000/svg') {
+      preview.textContent = 'Invalid SVG document.';
+      outCss.innerText = '';
+      return;
+    }
     const uri = 'data:image/svg+xml,' + encodeSvg(raw);
+    const image = document.createElement('img');
+    image.alt = 'SVG';
+    image.src = uri;
+    image.style.maxWidth = '100%';
+    preview.replaceChildren(image);
     outCss.innerText = 'background-image: url("' + uri + '");';
   }
 
